@@ -40,7 +40,7 @@ def generate_aufgabe():
             model="gpt-3.5-turbo",
             messages=[{"role": "user", "content": prompt}],
             temperature=0.9,
-            max_tokens=300
+            max_tokens=500
         )
 
         raw_content = response.choices[0].message.content
