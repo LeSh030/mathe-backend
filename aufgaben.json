@@ -1,0 +1,18 @@
+[
+  {
+    "klasse": "10",
+    "bundesland": "Berlin",
+    "thema": "Funktionen",
+    "schwierig": "leicht",
+    "frage": "Berechne y = 2x + 3 für x = 4.",
+    "loesung": 11
+  },
+  {
+    "klasse": "13",
+    "bundesland": "Brandenburg",
+    "thema": "Analysis",
+    "schwierig": "mittel",
+    "frage": "Ableitung von f(x) = 3x^2. Gib die Zahl vor dem x an.",
+    "loesung": 6
+  }
+]
