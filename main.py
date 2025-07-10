@@ -20,13 +20,12 @@ def generate_aufgabe():
     random_seed = random.randint(1, 1000)
 
     prompt = (
-        f"Erstelle eine abwechslungsreiche Mathematik-Aufgabe für Klasse {klasse}, Thema {thema}, Schwierigkeitsgrad {schwierig}. "
-        f"Variiere Zahlen, Fragestellungen und Formate. "
-        f"Die Aufgabe soll immer klar machen, in welchem Format die Lösung erwartet wird (z.B. gerundet auf 2 Nachkommastellen, als Bruch, ganze Zahl). "
-        f"Löse die Aufgabe selbst Schritt für Schritt und gib die finale Lösung an. "
-        f"Liefere nur ein JSON-Objekt mit 'frage' und 'loesung'. Beispiel: "
-        f"{{\"frage\": \"Berechne 2 + 3. Gib eine ganze Zahl an.\", \"loesung\": 5}}. "
-        f"Stelle sicher, dass die Lösung korrekt und zur Aufgabe passend ist."
+        f"Du bist ein Mathematiklehrer. Erstelle eine abwechslungsreiche Mathematik-Aufgabe für Klasse {klasse}, Thema {thema}, Schwierigkeitsgrad {schwierig}. "
+        f"Die Aufgabe soll klar formuliert sein und genau angeben, wie die Lösung formatiert werden muss, z.B. als ganze Zahl, als Bruch, als Koordinaten oder gerundet auf 2 Nachkommastellen. "
+        f"Liefere nur ein JSON-Objekt mit den Schlüsseln 'frage', 'loesung', 'typ' und 'hinweis'. "
+        f"Der Schlüssel 'typ' gibt an, wie die Lösung aussieht (z.B. 'zahl', 'bruch', 'koordinaten'). "
+        f"Der Schlüssel 'hinweis' enthält eine kurze Erklärung, wie der Schüler die Antwort eingeben soll. "
+        f"Beispiel: {{\"frage\": \"Berechne 2 + 3. Gib eine ganze Zahl an.\", \"loesung\": 5, \"typ\": \"zahl\", \"hinweis\": \"Gib eine ganze Zahl an.\"}}"
     )
 
 
