@@ -20,13 +20,18 @@ def generate_aufgabe():
     random_seed = random.randint(1, 1000)
 
     prompt = (
-         f"Du bist ein Mathematiklehrer. Erstelle eine abwechslungsreiche Mathematik-Aufgabe für Klasse {klasse}, Thema {thema}, Schwierigkeitsgrad {schwierig}. "
-        f"Formuliere die Aufgabe so, dass die Schüler genau wissen, wie sie die Antwort schreiben müssen. Zudem muss die Lösung immer richtig sein die du mit ausgibst. Errechne also erst selber die lösung und beachte dabei alle rechenregeln. "
-        f"Der Hinweis soll nicht nur das Format angeben (z.B. ganze Zahl, Bruch, Dezimalzahl, Koordinaten), sondern auch praktische Tipps enthalten, z.B. wie Leerzeichen zu setzen sind, "
-        f"wie Klammern geschrieben werden sollen, oder wie Koordinaten eingegeben werden (z.B. mit Komma getrennt, keine Leerzeichen). "
-        f"Der Hinweis soll so verständlich sein und niemals die richtige antwort enthalten, dass Schüler ohne weitere Hilfe wissen, wie sie antworten müssen. "
-        f"Liefere als JSON nur die Schlüssel 'frage', 'loesung', 'typ' und 'hinweis'. "
-        f"Beispiel: {{\"frage\": \"Berechne die Nullstellen der Funktion f(x) = x^2 - 4.\", \"loesung\": [2, -2], \"typ\": \"koordinaten\", \"hinweis\": \"Gib die Nullstellen als zwei Zahlen getrennt durch Komma ohne Leerzeichen ein, z.B. 8,6.\"}}"
+        f"Erstelle eine abwechslungsreiche Mathematik-Aufgabe für Klasse {klasse}, Thema {thema}, Schwierigkeitsgrad {schwierig}. "
+        f"Variiere Zahlen, Fragestellungen und Formate. "
+        f"Die Aufgabe soll immer klar machen, in welchem Format die Lösung erwartet wird (z.B. gerundet auf 2 Nachkommastellen, als Bruch, ganze Zahl). "
+        f"Gib außerdem einen kurzen Hinweis, wie die Antwort eingegeben werden soll, ohne die Lösung zu verraten. "
+        f"Liefere als Antwort nur ein JSON-Objekt mit diesen Feldern: "
+        f"{{ "
+        f"\"frage\": \"...\", "
+        f"\"loesung\": ..., "  # Die Lösung als Zahl, Array oder String (ohne unnötigen Text)
+        f"\"hinweis\": \"...\" "
+        f"}}. "
+        f"Kein Fließtext oder Erklärungen. Beispiel: "
+        f"{{\"frage\": \"Berechne 2 + 3. Gib eine ganze Zahl an.\", \"loesung\": 5, \"hinweis\": \"Antworte mit einer ganzen Zahl.\"}}"
     )
 
 
