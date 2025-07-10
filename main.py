@@ -20,12 +20,13 @@ def generate_aufgabe():
     random_seed = random.randint(1, 1000)
 
     prompt = (
-        f"Du bist ein Mathematiklehrer. Erstelle eine abwechslungsreiche Mathematik-Aufgabe für Klasse {klasse}, Thema {thema}, Schwierigkeitsgrad {schwierig}. "
-        f"Die Aufgabe soll klar formuliert sein und genau angeben, wie die Lösung formatiert werden muss, z.B. als ganze Zahl, als Bruch, als Koordinaten oder gerundet auf 2 Nachkommastellen. "
-        f"Liefere nur ein JSON-Objekt mit den Schlüsseln 'frage', 'loesung', 'typ' und 'hinweis'. "
-        f"Der Schlüssel 'typ' gibt an, wie die Lösung aussieht (z.B. 'zahl', 'bruch', 'koordinaten'). "
-        f"Der Schlüssel 'hinweis' enthält eine kurze Erklärung, wie der Schüler die Antwort eingeben soll. "
-        f"Beispiel: {{\"frage\": \"Berechne 2 + 3. Gib eine ganze Zahl an.\", \"loesung\": 5, \"typ\": \"zahl\", \"hinweis\": \"Gib eine ganze Zahl an.\"}}"
+         f"Du bist ein Mathematiklehrer. Erstelle eine abwechslungsreiche Mathematik-Aufgabe für Klasse {klasse}, Thema {thema}, Schwierigkeitsgrad {schwierig}. "
+        f"Formuliere die Aufgabe so, dass die Schüler genau wissen, wie sie die Antwort schreiben müssen. "
+        f"Der Hinweis soll nicht nur das Format angeben (z.B. ganze Zahl, Bruch, Dezimalzahl, Koordinaten), sondern auch praktische Tipps enthalten, z.B. wie Leerzeichen zu setzen sind, "
+        f"wie Klammern geschrieben werden sollen, oder wie Koordinaten eingegeben werden (z.B. mit Komma getrennt, keine Leerzeichen). "
+        f"Der Hinweis soll so verständlich sein, dass Schüler ohne weitere Hilfe wissen, wie sie antworten müssen. "
+        f"Liefere als JSON nur die Schlüssel 'frage', 'loesung', 'typ' und 'hinweis'. "
+        f"Beispiel: {{\"frage\": \"Berechne die Nullstellen der Funktion f(x) = x^2 - 4.\", \"loesung\": [2, -2], \"typ\": \"koordinaten\", \"hinweis\": \"Gib die Nullstellen als zwei Zahlen getrennt durch Komma ohne Leerzeichen ein, z.B. 2,-2.\"}}"
     )
 
 
