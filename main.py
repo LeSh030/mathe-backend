@@ -24,7 +24,7 @@ def generate_aufgabe():
         f"Formuliere die Aufgabe so, dass die Schüler genau wissen, wie sie die Antwort schreiben müssen. "
         f"Der Hinweis soll nicht nur das Format angeben (z.B. ganze Zahl, Bruch, Dezimalzahl, Koordinaten), sondern auch praktische Tipps enthalten, z.B. wie Leerzeichen zu setzen sind, "
         f"wie Klammern geschrieben werden sollen, oder wie Koordinaten eingegeben werden (z.B. mit Komma getrennt, keine Leerzeichen). "
-        f"Der Hinweis soll so verständlich sein, dass Schüler ohne weitere Hilfe wissen, wie sie antworten müssen. "
+        f"Der Hinweis soll so verständlich sein und niemals die richtige antwort enthalten, dass Schüler ohne weitere Hilfe wissen, wie sie antworten müssen. "
         f"Liefere als JSON nur die Schlüssel 'frage', 'loesung', 'typ' und 'hinweis'. "
         f"Beispiel: {{\"frage\": \"Berechne die Nullstellen der Funktion f(x) = x^2 - 4.\", \"loesung\": [2, -2], \"typ\": \"koordinaten\", \"hinweis\": \"Gib die Nullstellen als zwei Zahlen getrennt durch Komma ohne Leerzeichen ein, z.B. 2,-2.\"}}"
     )
