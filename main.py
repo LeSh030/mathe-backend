@@ -16,26 +16,31 @@ def generate_aufgabe():
     thema = request.args.get('thema')
     schwierig = request.args.get('schwierig')
 
-    # 💡 Intelligenter, universeller Prompt
+    # Neuer, klarer Prompt
     prompt = (
-        f"Erstelle eine Mathematik-Aufgabe für Klasse {klasse} im Thema {thema} "
-        f"mit dem Schwierigkeitsgrad {schwierig}. "
-        f"Gib ausschließlich ein JSON-Objekt mit den Feldern 'frage' und 'loesung' zurück. "
-        f"Die Lösung soll eine Zahl (ganzzahlig), ein Bruch (z.B. '1/6') oder eine Dezimalzahl "
-        f"mit maximal 2 Nachkommastellen sein. Keine Erklärungen, kein Fließtext."
-        f"Beispiel: {{\"frage\": \"Berechne 2 + 3\", \"loesung\": 5}}"
+        f"Erstelle eine Mathematik-Aufgabe für die Klasse {klasse}, Thema {thema}, Schwierigkeitsgrad {schwierig}. "
+        f"Die Aufgabe muss in deutscher Sprache formuliert sein. "
+        f"Formuliere die Aufgabenstellung so, dass immer klar ist, in welchem Format die Lösung erwartet wird. "
+        f"Zum Beispiel: "
+        f"'Gib die Wahrscheinlichkeit als Bruch an.', "
+        f"'Runde das Ergebnis auf zwei Nachkommastellen.', "
+        f"'Gib die Antwort als gekürzten Bruch an.', "
+        f"oder 'Antworte mit einer ganzen Zahl.' "
+        f"Liefere als Antwort nur ein JSON-Objekt im folgenden Format: "
+        f"{{ \"frage\": \"...\", \"loesung\": \"...\" }}. "
+        f"Keinen Fließtext, keine Erklärungen, nur die Frage und die Lösung. "
+        f"Beispiel: {{ \"frage\": \"Berechne 2 + 3. Gib eine ganze Zahl an.\", \"loesung\": 5 }}"
     )
 
     try:
-        # Neue OpenAI-API (ab Version 1.x)
         response = openai.chat.completions.create(
-            model="gpt-3.5-turbo",  # günstig zum Testen
+            model="gpt-3.5-turbo",
             messages=[{"role": "user", "content": prompt}]
         )
 
         raw_content = response.choices[0].message.content
 
-        # 💡 Antwort parsen – JSON auslesen
+        # Antwort als JSON parsen
         aufgabe = json.loads(raw_content)
 
         return jsonify(aufgabe)
