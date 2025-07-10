@@ -1,14 +1,17 @@
 from flask import Flask, jsonify, request
 from flask_cors import CORS
 import json
+import os
 
 app = Flask(__name__)
 CORS(app)
 
+# JSON-Datei mit Aufgaben laden
 def lade_aufgaben():
     with open('aufgaben.json', encoding='utf-8') as f:
         return json.load(f)
 
+# API-Endpunkt
 @app.route('/api/aufgaben', methods=['GET'])
 def get_aufgaben():
     klasse = request.args.get('klasse')
@@ -18,6 +21,7 @@ def get_aufgaben():
 
     daten = lade_aufgaben()
 
+    # Filter nach Parametern
     gefiltert = [
         a for a in daten
         if a['klasse'] == klasse
@@ -28,5 +32,7 @@ def get_aufgaben():
 
     return jsonify(gefiltert)
 
+# Startet den Server
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=10000)  # Render nimmt PORT aus der Umgebung
+    port = int(os.environ.get('PORT', 5000))  # Render setzt $PORT automatisch
+    app.run(host='0.0.0.0', port=port, debug=True)
