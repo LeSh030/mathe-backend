@@ -8,11 +8,75 @@
     "loesung": 11
   },
   {
+    "klasse": "10",
+    "bundesland": "Berlin",
+    "thema": "Funktionen",
+    "schwierig": "mittel",
+    "frage": "Berechne y = 5x - 2 für x = 3.",
+    "loesung": 13
+  },
+  {
+    "klasse": "10",
+    "bundesland": "Brandenburg",
+    "thema": "Gleichungen",
+    "schwierig": "leicht",
+    "frage": "Löse: x + 7 = 12",
+    "loesung": 5
+  },
+  {
+    "klasse": "10",
+    "bundesland": "Brandenburg",
+    "thema": "Geometrie",
+    "schwierig": "schwer",
+    "frage": "Berechne den Flächeninhalt eines Kreises mit r = 6 (Pi = 3.14)",
+    "loesung": 113
+  },
+  {
+    "klasse": "13",
+    "bundesland": "Berlin",
+    "thema": "Analysis",
+    "schwierig": "leicht",
+    "frage": "Ableitung von f(x) = 3x². Zahl vor dem x?",
+    "loesung": 6
+  },
+  {
+    "klasse": "13",
+    "bundesland": "Berlin",
+    "thema": "Analysis",
+    "schwierig": "schwer",
+    "frage": "Ableitung von f(x) = 5x³. Zahl vor dem x?",
+    "loesung": 15
+  },
+  {
     "klasse": "13",
     "bundesland": "Brandenburg",
-    "thema": "Analysis",
+    "thema": "Vektoren",
+    "schwierig": "leicht",
+    "frage": "Betrag des Vektors (3, 4)?",
+    "loesung": 5
+  },
+  {
+    "klasse": "13",
+    "bundesland": "Brandenburg",
+    "thema": "Stochastik",
     "schwierig": "mittel",
-    "frage": "Ableitung von f(x) = 3x^2. Gib die Zahl vor dem x an.",
-    "loesung": 6
+    "frage": "Wahrscheinlichkeit für eine 6 beim Würfeln (%)?",
+    "loesung": 17
+  },
+  {
+    "klasse": "10",
+    "bundesland": "Berlin",
+    "thema": "Stochastik",
+    "schwierig": "leicht",
+    "frage": "Wahrscheinlichkeit für Kopf beim Münzwurf (%)?",
+    "loesung": 50
+  },
+  {
+    "klasse": "10",
+    "bundesland": "Berlin",
+    "thema": "Algebra",
+    "schwierig": "mittel",
+    "frage": "Berechne: (-7) + (12)",
+    "loesung": 5
   }
 ]
