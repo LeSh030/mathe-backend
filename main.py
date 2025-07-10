@@ -20,15 +20,15 @@ def generate_aufgabe():
     random_seed = random.randint(1, 1000)
 
     prompt = (
-        f"Du bist ein Mathematiklehrer. Erstelle eine abwechslungsreiche und einzigartige Mathematik-Aufgabe "
-        f"für Klasse {klasse}, Thema {thema}, Schwierigkeitsgrad {schwierig}. "
-        f"Die Aufgabe soll klar formuliert sein und den Schüler genau anweisen, wie die Lösung formatiert werden soll "
-        f"(z.B. als Bruch, gerundet auf 2 Nachkommastellen, ganze Zahl). "
-        f"Variiere die Zahlen, den Kontext und die Art der Fragestellung. "
-        f"Nutze die Zufallszahl {random_seed} um Variation zu gewährleisten. "
-        f"Antworte nur mit einem JSON-Objekt mit den Schlüsseln 'frage' und 'loesung', ohne weitere Erklärungen. "
-        f"Beispiel: {{\"frage\": \"Berechne 3 + 4. Gib eine ganze Zahl an.\", \"loesung\": 7}}."
+        f"Erstelle eine abwechslungsreiche Mathematik-Aufgabe für Klasse {klasse}, Thema {thema}, Schwierigkeitsgrad {schwierig}. "
+        f"Variiere Zahlen, Fragestellungen und Formate. "
+        f"Die Aufgabe soll immer klar machen, in welchem Format die Lösung erwartet wird (z.B. gerundet auf 2 Nachkommastellen, als Bruch, ganze Zahl). "
+        f"Löse die Aufgabe selbst Schritt für Schritt und gib die finale Lösung an. "
+        f"Liefere nur ein JSON-Objekt mit 'frage' und 'loesung'. Beispiel: "
+        f"{{\"frage\": \"Berechne 2 + 3. Gib eine ganze Zahl an.\", \"loesung\": 5}}. "
+        f"Stelle sicher, dass die Lösung korrekt und zur Aufgabe passend ist."
     )
+
 
     try:
         response = openai.chat.completions.create(
@@ -39,6 +39,7 @@ def generate_aufgabe():
         )
 
         raw_content = response.choices[0].message.content
+        
         aufgabe = json.loads(raw_content)
         return jsonify(aufgabe)
 
