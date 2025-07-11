@@ -20,7 +20,7 @@ def generate_aufgabe():
     random_seed = random.randint(1, 1000)
 
     prompt = (
-         f"Erstelle eine abwechslungsreiche Mathematik-Aufgabe für Klasse {klasse}, Thema {thema}, Schwierigkeitsgrad {schwierig}. "
+         f"Erstelle eine abwechslungsreiche Mathematik-Aufgabe mit der immer richtigen lösung für Klasse {klasse}, Thema {thema}, Schwierigkeitsgrad {schwierig}. "
         f"Variiere Zahlen, Fragestellungen und Formate. "
         f"Die Aufgabe soll immer klar machen, in welchem Format die Lösung erwartet wird (z.B. gerundet auf 2 Nachkommastellen, als Bruch, ganze Zahl). "
         f"Liefere ein JSON-Objekt mit folgenden Feldern: "
@@ -38,7 +38,7 @@ def generate_aufgabe():
             model="gpt-3.5-turbo",
             messages=[{"role": "user", "content": prompt}],
             temperature=0.9,
-            max_tokens=500
+            max_tokens=800
         )
 
         raw_content = response.choices[0].message.content
