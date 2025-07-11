@@ -20,18 +20,16 @@ def generate_aufgabe():
     random_seed = random.randint(1, 1000)
 
     prompt = (
-        f"Erstelle eine abwechslungsreiche Mathematik-Aufgabe für Klasse {klasse}, Thema {thema}, Schwierigkeitsgrad {schwierig}. "
+         f"Erstelle eine abwechslungsreiche Mathematik-Aufgabe für Klasse {klasse}, Thema {thema}, Schwierigkeitsgrad {schwierig}. "
         f"Variiere Zahlen, Fragestellungen und Formate. "
         f"Die Aufgabe soll immer klar machen, in welchem Format die Lösung erwartet wird (z.B. gerundet auf 2 Nachkommastellen, als Bruch, ganze Zahl). "
-        f"Gib außerdem einen kurzen Hinweis, wie die Antwort eingegeben werden soll, ohne die Lösung zu verraten. "
-        f"Liefere als Antwort nur ein JSON-Objekt mit diesen Feldern: "
-        f"{{ "
-        f"\"frage\": \"...\", "
-        f"\"loesung\": ..., "  # Die Lösung als Zahl, Array oder String (ohne unnötigen Text)
-        f"\"hinweis\": \"...\" "
-        f"}}. "
-        f"Kein Fließtext oder Erklärungen. Beispiel: "
-        f"{{\"frage\": \"Berechne 2 + 3. Gib eine ganze Zahl an.\", \"loesung\": 5, \"hinweis\": \"Antworte mit einer ganzen Zahl.\"}}"
+        f"Liefere ein JSON-Objekt mit folgenden Feldern: "
+        f"\"frage\" (die Aufgabe), "
+        f"\"loesung\" (die richtige Antwort, rechne die aufgabe selber sodass du immer die richtige lösung zurück gibst. Es darf niemals die falsche lösung sein), "
+        f"und \"hinweis\" (einen Lösungsweg oder Tipp, der erklärt, wie man die Aufgabe lösen kann, ohne die exakte Lösung zu verraten). "
+        f"Der Hinweis soll dem Schüler helfen, die Aufgabe zu verstehen und zu bearbeiten, aber nicht die Lösung vorwegnehmen. "
+        f"Beispiel-Antwort: {{\"frage\": \"Berechne 2 + 3. Gib eine ganze Zahl an.\", \"loesung\": 5, \"hinweis\": \"Addiere die beiden Zahlen einfach zusammen.\"}}."
+        
     )
 
 
